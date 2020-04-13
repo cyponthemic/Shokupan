@@ -1,0 +1,84 @@
+<template>
+  <div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+    <div class="square"></div>
+    <img src="~assets/logo.svg">
+    <h1>COMING SOON</h1>
+  </div>
+</template>
+<style scoped>
+  img {
+    margin: 25vh auto;
+    max-width: 100%;
+  }
+</style>
