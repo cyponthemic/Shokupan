@@ -63,6 +63,9 @@ export default {
     // See https://http.nuxtjs.org/api/#options
   },
 
+  env: {
+    URL: process.env.URL
+  },
   /*
    ** Build configuration
    ** Doc: https://nuxtjs.org/api/configuration-build
