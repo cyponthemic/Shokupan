@@ -25,9 +25,13 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap"
+          "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
       }
     ]
+  },
+
+  server: {
+    host: '0.0.0.0', // default: localhost
   },
 
   /*
