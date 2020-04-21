@@ -1,14 +1,19 @@
 <template>
   <div>
-    <img src="~assets/logo.svg">
+    <div class="logo-circle">
+      <img src="~assets/logo.svg">
+    </div>
     <nav class="menu">
       <ShokuSection
-        :animate="animate"
-        :section="section" v-for="section in sections"
+        :expand="expanded === i"
+        :section="section" v-for="(section, i) in sections"
+        @expand="expanded = i"
         in-viewport-root-margin="-40% 0%"
       ></ShokuSection>
     </nav>
-    <img src="~assets/logo.svg">
+    <div class="logo-circle">
+      <img src="~assets/logo.svg">
+    </div>
   </div>
 </template>
 <script>
@@ -24,6 +29,7 @@ export default {
   },
   data() {
     return {
+      expanded: -1,
       sections: [
         {
           title: 'Contact us',
@@ -64,8 +70,25 @@ We are currently looking at some plant based packaging to preserve the shelf lif
 }
 </script>
 <style scoped>
-img {
+.logo-circle {
+  position: relative;
   margin: 25vh auto;
-  max-width: 100%;
+  display: inline-block;
+  width: auto;
+}
+
+.logo-circle:after {
+  display: block;
+  position: absolute;
+  content: '';
+  background-color: #fff200;
+  width: 140%;
+  padding-bottom: 140%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 55%;
+  border-radius: 100%;
+  z-index: -1;
 }
 </style>

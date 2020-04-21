@@ -1,5 +1,5 @@
 body {
-  --background-color: #fff200;
+  --background-color: #fff;
   margin: 0;
   background: var(--background-color);
   color: black;
@@ -7,101 +7,67 @@ body {
   font-weight: bold;
 }
 
-.wrapper-3d {
-  position: relative;
-  perspective: 20vw;
-  transform-style: preserve-3d;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-.fold {
-  overflow: hidden;
-  width: 60vw;
-  height: 80vh;
-}
-.fold-top {
-  position: absolute;
-  transform-origin: bottom center;
-  left: 0;
-  right: 0;
-  bottom: 100%;
+:root {
+  font-size: 15px;
 }
 
-.fold-bottom {
-  position: absolute;
-  transform-origin: top center;
-  right: 0;
-  left: 0;
-  top: 100%;
-}
-.fold-align {
-  width: 100%;
-  height: 100%;
-}
-.fold-bottom .fold-align {
-  transform: translateY(-100%);
-}
-.fold-top .fold-align {
-  transform: translateY(100%);
+body {
+  margin: 0;
+  --color-text: #111;
+  --color-bg: var(--background-color);
+  --color-link: #b19e7f;
+  --color-link-hover: #000;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sofia-pro, sans-serif;
 }
 
-.fold-bottom {
-  transform-origin: top center;
-  transform: rotateX(120deg);
+/* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ */
+
+main::before {
+  animation: grain 8s steps(10) infinite;
+  background-image: url('~assets/noise.png');
+  content: '';
+  height: 300%;
+  left: -50%;
+  opacity: 0.6;
+  position: fixed;
+  top: -100%;
+  width: 300%;
 }
-
-.fold-top {
-  transform-origin: bottom center;
-  transform: rotateX(-120deg);
-}
-
-.square {
-  width: 100%;
-  /* padding-bottom: 75%; */
-}
-
-h1 {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 400;
-}
-
-
-
 
 @keyframes grain {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -10%);
-  }
-  20% {
-    transform: translate(-15%, 5%);
-  }
-  30% {
-    transform: translate(7%, -25%);
-  }
-  40% {
-    transform: translate(-5%, 25%);
-  }
-  50% {
-    transform: translate(-15%, 10%);
-  }
-  60% {
-    transform: translate(15%, 0%);
-  }
-  70% {
-    transform: translate(0%, 15%);
-  }
-  80% {
-    transform: translate(3%, 35%);
-  }
-  90% {
-    transform: translate(-10%, 10%);
-  }
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-link);
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+  outline: none;
+}
 
 .frame {
   padding: 3rem 5vw;
@@ -141,7 +107,7 @@ h1 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 0;
+  padding: 10vh 0 25vh;
   --marquee-width: 100vw;
   --offset: 20vw;
   --move-initial: calc(-25% + var(--offset));
@@ -150,19 +116,10 @@ h1 {
   counter-reset: menu;
 }
 
-.menu p {
-  margin-bottom: 1em;
-}
-
 .menu__item {
   cursor: default;
   position: relative;
   padding: 0 5vw;
-  margin-bottom: 33vh;
-}
-
-.menu__item:last-child {
-  margin-bottom: 0;
 }
 
 .menu__item-link {
@@ -181,14 +138,15 @@ h1 {
   all: initial;
   font-family: sofia-pro, sans-serif;
   counter-increment: menu;
-  content: counter(menu);
+  content:  counter(menu);
   position: absolute;
   bottom: 60%;
   left: 0;
   pointer-events: none;
 }
 
-.menu__item-link.hover {
+.menu__item-link.hover,
+.menu__item-link:hover {
   transition-duration: 0.1s;
   opacity: 0;
 }
@@ -196,17 +154,18 @@ h1 {
 .menu__item-img {
   pointer-events: none;
   position: absolute;
-  height: auto;
-  width: 20%;
+  height: 50vh;
+  max-height: 400px;
   opacity: 0;
   left: 100%;
-  top: 0%;
-  transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0);
+  top: 50%;
+  transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
 }
 
-.menu__item-link.hover + .menu__item-img {
+.menu__item-link.hover + .menu__item-img,
+.menu__item-link:hover + .menu__item-img {
   opacity: 1;
-  transform: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg);
+  transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
   transition: all 0.4s;
 }
 
@@ -233,7 +192,8 @@ h1 {
   transition: opacity 0.1s;
 }
 
-.menu__item-link.hover ~ .marquee .marquee__inner {
+.menu__item-link.hover ~ .marquee .marquee__inner,
+.menu__item-link:hover ~ .marquee .marquee__inner {
   animation-play-state: running;
   opacity: 1;
   transition-duration: 0.4s;
